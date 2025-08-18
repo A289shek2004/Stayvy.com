@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./Stayvy backend/StavyCo
+    container_name: stayvy_backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./Stayvy backend/StavyCo:/app
+    depends_on:
+      - db
+
+  frontend:
+    build: ./Stayvy frontend
+    container_name: stayvy_frontend
+    command: npm run dev
+    ports:
+      - "5173:5173"
+    env_file:
+      - .env
+    volumes:
+      - ./Stayvy frontend:/app
+      - /app/node_modules
+
+  db:
+    image: postgres:15
+    container_name: stayvy_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: stayvy
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

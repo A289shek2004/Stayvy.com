@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Dusky Rose elegant color palette */
+    --background: 23 16% 95%; /* Very light dusky rose */
+    --foreground: 169 20% 16%; /* Deep hawthorne green */
+
+    --card: 0 0% 100%;
+    --card-foreground: 169 20% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 169 20% 16%;
+
+    /* Primary: Deep hawthorne green */
+    --primary: 169 20% 16%;
+    --primary-foreground: 23 16% 95%;
+
+    /* Secondary: Soft dusky rose */
+    --secondary: 23 16% 90%;
+    --secondary-foreground: 169 20% 16%;
+
+    --muted: 23 16% 92%;
+    --muted-foreground: 169 20% 45%;
+
+    /* Accent: Royal scepter */
+    --accent: 327 17% 85%;
+    --accent-foreground: 169 20% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 23 16% 85%;
+    --input: 23 16% 90%;
+    --ring: 169 20% 16%;
+
+    --radius: 0.75rem;
+
+    /* Dusky Rose theme colors */
+    --dusky-rose: 23 16% 77%; /* #D9BCAF */
+    --thistle: 118 5% 54%; /* #8A9688 */
+    --hawthorne: 169 20% 16%; /* #283D38 */
+    --royal-scepter: 327 17% 40%; /* #795663 */
+    --blue-noir: 207 95% 8%; /* #011627 */
+    --soft-rose: 23 16% 88%;
+    --muted-thistle: 118 5% 75%;
+
+    /* Background palette colors */
+    --sage-green: 56 17% 57%; /* #A3A380 */
+    --light-sage: 52 45% 71%; /* #D7CE93 */
+    --cream-beige: 49 38% 87%; /* #EFEBCE */
+    --warm-peach: 18 52% 71%; /* #D8A48F */
+    --muted-mauve: 354 19% 63%; /* #BB8588 */
+
+    --sidebar-background: 23 16% 96%;
+    --sidebar-foreground: 169 20% 16%;
+    --sidebar-primary: 169 20% 16%;
+    --sidebar-primary-foreground: 23 16% 95%;
+    --sidebar-accent: 23 16% 92%;
+    --sidebar-accent-foreground: 169 20% 16%;
+    --sidebar-border: 23 16% 85%;
+    --sidebar-ring: 169 20% 16%;
+  }
+
+  .dark {
+    /* Dark dusky rose theme */
+    --background: 207 95% 8%;
+    --foreground: 23 16% 85%;
+
+    --card: 207 95% 12%;
+    --card-foreground: 23 16% 85%;
+
+    --popover: 207 95% 12%;
+    --popover-foreground: 23 16% 85%;
+
+    --primary: 327 17% 55%;
+    --primary-foreground: 207 95% 8%;
+
+    --secondary: 207 95% 18%;
+    --secondary-foreground: 23 16% 85%;
+
+    --muted: 207 95% 16%;
+    --muted-foreground: 23 16% 65%;
+
+    --accent: 118 5% 65%;
+    --accent-foreground: 207 95% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 23 16% 85%;
+
+    --border: 207 95% 20%;
+    --input: 207 95% 18%;
+    --ring: 327 17% 55%;
+
+    /* Dark dusky rose theme colors */
+    --dusky-rose: 23 16% 65%; /* Lighter for dark mode */
+    --thistle: 118 5% 65%; /* Brighter for dark mode */
+    --hawthorne: 169 20% 55%; /* Lighter hawthorne for dark mode */
+    --royal-scepter: 327 17% 55%; /* Royal scepter for dark mode */
+    --blue-noir: 207 95% 8%; /* Deep blue noir */
+    --soft-rose: 23 16% 25%;
+    --muted-thistle: 118 5% 35%;
+
+    --sidebar-background: 207 95% 8%;
+    --sidebar-foreground: 23 16% 85%;
+    --sidebar-primary: 327 17% 55%;
+    --sidebar-primary-foreground: 207 95% 8%;
+    --sidebar-accent: 207 95% 16%;
+    --sidebar-accent-foreground: 23 16% 85%;
+    --sidebar-border: 207 95% 20%;
+    --sidebar-ring: 327 17% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

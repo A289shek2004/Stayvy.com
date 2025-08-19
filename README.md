@@ -20,7 +20,7 @@ Stayvy.com/
 
 ### 1. Clone Repo
 ```bash
-git clone https://github.com/<your-username>/Stayvy.com.git
+git clone https://github.com/<A289shek2004>/Stayvy.com.git
 cd Stayvy.com
 ### 2.SetupBackend
 cd "tayvy backend/StavyCo"

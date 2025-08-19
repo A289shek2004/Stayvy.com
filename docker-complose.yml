@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   backend:
-    build: ./Stayvy backend/StavyCo
+    build: ./Stayvy backend
     container_name: stayvy_backend
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     ports:
@@ -10,7 +10,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./Stayvy backend/StavyCo:/app
+      - ./Stayvy backend:/app
     depends_on:
       - db
 
